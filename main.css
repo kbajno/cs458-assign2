@@ -1,0 +1,105 @@
+/*Displays current year*/
+#parent {
+	position: fixed;
+ 	width:1500px;
+ 	height: 800px;
+}
+
+/*Displays current year*/
+#year {
+	position: relative;
+ 	/*background-color:green;*/
+ 	width:300px;
+  	height:700px;
+  	left: 0px;
+  	top: 0px;
+}
+
+.yearText{
+	width:1px;
+	word-wrap: break-word;
+	position: absolute;
+	left:35%;
+	top:0px;
+	margin-top: 0%;
+
+	/*top: 50%;
+	left: 50%;
+	transform: translateX(-50%) translateY(-50%);
+	vertical-align: middle;*/
+
+	font-size:150px;
+	font-weight:bold;
+	/*font-family: Tahoma, Geneva, sans-serif;*/
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	
+}
+
+.selectText{
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight:bold;
+	font-size:20px;
+	margin: 0 auto;
+	top:0px;
+	left:30px;
+	position: relative;
+
+
+}
+
+/*Drop down menu. References: https://codepen.io/ericrasch/pen/zjDBx for menu-style and menu-style select*/ 
+#menu {
+	position: relative;
+	display:inline-block;
+  	/*background-color:blue;*/
+  	width:300px;
+   	height:100px;
+   	bottom: 0px;
+   	left: 0px;
+
+}
+
+.menu-style {
+	margin: 0 auto;
+
+	/*URL for arrow from reference*/
+	background: url(http://i62.tinypic.com/15xvbd5.png) no-repeat 96% 0;
+   	background-color: black;
+   	height: 35px;
+   	overflow: hidden;
+   	width: 240px;
+
+	/*Semi-Rounded corners*/
+ 	-webkit-border-radius: 5px;
+   	-moz-border-radius: 5px;
+   	border-radius: 5px;
+
+   }
+
+.menu-style select {
+
+	background: transparent;
+	border: none;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+   	font-size: 18px;
+   	height: 29px;
+   	padding: 5px; 
+   	width: 268px;
+   	color: white;
+   	
+}
+
+.color-text {
+	color: black;
+}
+
+/*Actual visualization with scale*/
+#tree-map{
+	position: absolute;
+  	width:1200px;
+  	height: 800px;
+  	bottom: 0px;
+  	right: 0px;
+    top:50px;
+
+}
