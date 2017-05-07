@@ -4,12 +4,14 @@ google.charts.setOnLoadCallback(function(){
 });
 function drawChart(year) {
 
+  //When a node is highlighted over this displays a tool tip with current years air pollution index and change from previous year
   function showFullTooltip(row, size, value) {
     return '<div style="background: #cccccc; padding:10px; border-style:solid">' + '<span style="font-family:Helvetica Neue"><b>' + data.getValue(row, 0) +
            ' Air Pollution: </b>' + data.getValue(row,2) + '<br>' + '<b>Change from previous year:</b> ' + data.getValue(row,3) +
       '</div>';
   }
 
+  //Sets the styling for the tree map visualization
   function drawTreeMap(table){
     var options = {
       /*highlightOnMouseOver: true,
@@ -32,6 +34,7 @@ function drawChart(year) {
     tree.draw(data, options);
   }
 
+  //This function fills in the tree map array with the information from the database
   function setChartData(year){
   var data = [];
   $.ajax({
@@ -42,7 +45,10 @@ function drawChart(year) {
         ['Location', 'Parent', 'Air Index', 'Change from Previous'],
         ['Global', null, 0, 0]
         ];
+
+      //First year is blank and has no change so we specify it
       if(year != 07){
+
         //Get next years data
         year -= 1;
         $.ajax({
@@ -66,10 +72,9 @@ function drawChart(year) {
     });
   }
 
-
-
   setChartData(year);
 
+  /*Next section draws the actual tree map*/
   tree = new google.visualization.TreeMap(document.getElementById('chart_div'));       
       /*tree.draw(data, {
         minColor: '#f00',
