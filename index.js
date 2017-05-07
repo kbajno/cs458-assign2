@@ -18,9 +18,9 @@ function drawChart(year) {
       minHighlightColor: '#8c6bb1',
       midHighlightColor: '#9ebcda',
       maxHighlightColor: '#edf8fb', */
-      maxColor: '#009688',
+      minColor: '#009688',
       midColor: '#f7f7f7',
-      minColor: '#ee8100',
+      maxColor: '#ee8100',
       headerHeight: 0,
       showScale: true,
       height: 700,
@@ -58,7 +58,7 @@ function drawChart(year) {
           console.log(dataPast);
           console.log(dataCurrent);
           $.each(dataCurrent, function(index, value){
-            table.push([value["state"], 'Global', value["value"], dataPast[index]["value"] - value["value"]]);
+            table.push([value["state"], 'Global', value["value"], value["value"] - dataPast[index]["value"]]);
           });
           drawTreeMap(table);
         });
